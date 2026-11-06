@@ -17,11 +17,17 @@ sudo apt install spacemit-onnxruntime python3-spacemit-ort -y
 
 2. 运行推理
 
-将需要测试的音频文件命名为 motor.wav 放在当前目录下（或在代码中修改路径），直接执行：
+为了深度适配 MUSE Pi Pro 的出厂环境，本模块在边缘端的默认音频读取路径已硬编码为 /home/bianbu/motor.wav。
 
-```bash
-python3 auto_diagnose.py
-```
+环境复现指南：
+
+· 【在 K1 开发板上运行（标准方案）】
+  请将待测的 WAV 音频文件命名为 motor.wav，并将其放置在开发板的 /home/bianbu/ 用户目录下。直接执行以下命令即可：
+  ```bash
+  python3 auto_diagnose.py
+  ```
+· 【在其他 PC 电脑上本地测试】
+  如果您在 x86 电脑上下载了本仓库进行代码审查，由于系统路径差异，程序会提示找不到文件。您只需使用任意文本编辑器打开 auto_diagnose.py，将开头的 audio_path 变量修改为您本地 .wav 文件的绝对路径（例如 C:\test\motor.wav）即可直接运行。
 文件结构
 
 auto_diagnose.py：核心推理脚本。
