@@ -35,7 +35,7 @@ fault_cnn_5class.onnx / .data：训练好的 5 分类 CNN 模型。
 audio_output.json：生成的标准化输出样例。
 输出规范
 
-运行成功后，终端会打印诊断结果，并生成供大模型融合模块调用的 audio_output.json：
+运行成功后，终端会打印诊断结果，并生成供大模型融合模块调用的 audio_output.json（结果实例已一并给出在同一文件夹）：
 
 ```json
 {
