@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "vision": {
+      "type": "object",
+      "properties": {
+        "device_type": {
+          "type": "string",
+          "description": "设备类型，如 motor, water_meter"
+        },
+        "model": {
+          "type": "string",
+          "description": "设备型号或厂家名称"
+        },
+        "reading": {
+          "type": "string",
+          "description": "仪表当前读数，没有则为 N/A"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "normal",
+            "alarm",
+            "unreadable"
+          ],
+          "description": "设备状态"
+        },
+        "confidence": {
+          "type": "number",
+          "description": "模型识别置信度，保留两位小数"
+        }
+      }
+    }
+  }
+}
